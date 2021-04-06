@@ -43,7 +43,7 @@ function renderLastRegistered() {
 function handleFormSubmit(event) {
     event.preventDefault();
 
-    let btnClicked = $(event.target);
+    let btnClicked = $(event.currentTarget);
 
     let targetText = btnClicked.siblings("textarea");
  
