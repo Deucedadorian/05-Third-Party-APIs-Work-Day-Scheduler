@@ -8,18 +8,19 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d8col-80M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
+    <!-- <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+   />  -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
+    
   </head>
 
   <body>
@@ -30,15 +31,20 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <div class="container">
-        <div class="row row-cols-3 border">
-          <div class="col">9AM</div>
-          <div class="col-8 border">Column</div>
-          <div class="col">Column</div>
-        </div>
+      <div class="row row-cols-3 border">
+        <div class="col text-right border">9AM</div>
+        <textarea class="form-control col-8" type="text" id="0">wow1</textarea>
+        <div class="col border d-flex align-items-center justify-content-center save-icon"><i class="fas fa-save"></i></div>
+      </div>
+      <div class="row row-cols-3 border">
+        <div class="col text-right border" id="1">10AM</div>
+        <textarea class="form-control col-8" type="text">wow2</textarea>
+        <div class="col border d-flex align-items-center justify-content-center save-icon"><i class="fas fa-save"></i></div>
       </div>
     </div>
 
+    
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
