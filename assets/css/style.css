@@ -13,6 +13,10 @@ textarea {
   padding: 10px;
 }
 
+.save-container {
+  background-color: powderblue;
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
