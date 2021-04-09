@@ -1,5 +1,25 @@
-let today = moment();
-$("#currentDay").text(today.format("dddd, MMMM Do YYYY, h:mm.ss"));
+function updateTime() {
+    let today = moment();
+    $("#currentDay").text(today.format("dddd, MMMM Do YYYY, h:mm.ss"));
+
+    // For coloring the past, present, and future time blocks
+
+    let now = moment().format("kk");
+    for (let i = 0; i < scheduleElArray.length; i++) {
+        scheduleElArray[i].removeClass("future past present");
+
+        if (now > scheduleElArray[i].data("hour")) {
+            scheduleElArray[i].addClass("past");
+
+        } else if (now === scheduleElArray[i].attr("data-hour")) {
+            scheduleElArray[i].addClass("present");
+
+        } else {
+
+            scheduleElArray[i].addClass("future");
+        }
+    }
+}
 
 let saveBttn = $(".save-icon");
 let containerEl = $(".container");
@@ -26,29 +46,14 @@ let scheduleElArray = [
 ];
 
 renderLastRegistered();
+updateTime();
+setInterval(updateTime, 1000); 
 
 // TODO: make this function to render schedule
 function renderLastRegistered() {
-    for (i = 0; i < scheduleElArray.length; i++) {
-        scheduleElArray[i].val(localStorage.getItem("time block " + i));
+    for (let el of scheduleElArray) {
+        el.val(localStorage.getItem("time block " + el.data("hour")));
 
-    }
-}
-
-// For coloring the past, present, and future time blocks
-
-let now = moment().format("kk");
-for (let i = 0; i < scheduleElArray.length; i++) {
-
-    if(now > scheduleElArray[i].attr("data-hour")) {
-        scheduleElArray[i].addClass("past");
-
-    } else if (now === scheduleElArray[i].attr("data-hour")) {
-        scheduleElArray[i].addClass("present");
-
-    } else {
-
-        scheduleElArray[i].addClass("future");
     }
 }
 
@@ -61,10 +66,10 @@ function handleFormSubmit(event) {
 
     let targetText = btnClicked.siblings("textarea");
  
-    let targetTimeBlock = targetText.attr("data-position");
+    let targetTimeBlock = targetText.data("hour");
     console.log(targetTimeBlock + "should be here");
 
-    localStorage.setItem("time block " +  targetTimeBlock, scheduleElArray[targetTimeBlock].val());
+    localStorage.setItem("time block " +  targetTimeBlock, targetText.val());
     // localStorage.setItem("schedule", JSON.stringify(schedule));
 
 }
