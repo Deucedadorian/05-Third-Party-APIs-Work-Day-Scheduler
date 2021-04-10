@@ -6,7 +6,9 @@ https://deucedadorian.github.io/05-Third-Party-APIs-Work-Day-Scheduler/
 
 ## Description
 
-This application allows you to plan out your work day. you can write out your schedule for each hour and the app will help you to keep track of time by coloring each hour with colors for past, present, and future. through this project, I learned about jquery, bootstrap, and moment.js.
+This application allows you to plan out your work day. you can write out your schedule for each hour and the app will help you to keep track of time by coloring each hour with colors for past, present, and future. 
+
+Through this project, I learned about jquery, bootstrap, and moment.js.
 
 ## Usage
 
