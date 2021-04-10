@@ -1,9 +1,11 @@
+// updates time on the webpage
 function updateTime() {
     let today = moment();
+
+    // updates the time element in the header
     $("#currentDay").text(today.format("dddd, MMMM Do YYYY, h:mm.ss"));
 
     // For coloring the past, present, and future time blocks
-
     let now = moment().format("kk");
     for (let i = 0; i < scheduleElArray.length; i++) {
         scheduleElArray[i].removeClass("future past present");
@@ -21,6 +23,7 @@ function updateTime() {
     }
 }
 
+// textarea elements
 let saveBttn = $(".save-icon");
 let containerEl = $(".container");
 let schedule9am = $("#9AM");
@@ -49,7 +52,7 @@ renderLastRegistered();
 updateTime();
 setInterval(updateTime, 1000); 
 
-// TODO: make this function to render schedule
+// render schedule saved in local storage
 function renderLastRegistered() {
     for (let el of scheduleElArray) {
         el.val(localStorage.getItem("time block " + el.data("hour")));
@@ -70,11 +73,6 @@ function handleFormSubmit(event) {
     console.log(targetTimeBlock + "should be here");
 
     localStorage.setItem("time block " +  targetTimeBlock, targetText.val());
-    // localStorage.setItem("schedule", JSON.stringify(schedule));
-
 }
 
 saveBttn.on("click", handleFormSubmit);
-renderLastRegistered();
-
-// let time9am = moment()
