@@ -70,7 +70,6 @@ function handleFormSubmit(event) {
     let targetText = btnClicked.siblings("textarea");
  
     let targetTimeBlock = targetText.data("hour");
-    console.log(targetTimeBlock + "should be here");
 
     localStorage.setItem("time block " +  targetTimeBlock, targetText.val());
 }
