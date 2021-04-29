@@ -36,7 +36,7 @@ Simply click on the textarea of the timeblock you want to alter and type in your
 Dylan Cole <logboarddjc@gmail.com>
 
 ## License
-
+ 
 MIT License
 
 Copyright (c) [2021] [Dylan Cole]
