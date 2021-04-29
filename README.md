@@ -2,7 +2,7 @@
 
 ## Link to deployed application
 
-https://deucedadorian.github.io/05-Third-Party-APIs-Work-Day-Scheduler/
+https://deucedadorian.github.io/05-Third-Party-APIs-Work-Day-Scheduler/ 
 
 ## Description
 
